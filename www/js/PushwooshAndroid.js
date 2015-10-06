@@ -34,7 +34,7 @@ function registerPushwooshAndroid() {
 			}
 
 			//and show alert
-			alert(title);
+			alert("Notificacion: "+title);
 
 			//stopping geopushes
 			//pushNotification.stopGeoPushes();
@@ -48,7 +48,7 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			alert(token);
+			alert("Token "+token);
 			//callback when pushwoosh is ready
 			onPushwooshAndroidInitialized(token);
 		},
@@ -79,6 +79,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushwooshHWID(
 		function(token) {
 			console.warn('Pushwoosh HWID: ' + token);
+			alert('Pushwoosh HWID: ' + token);
 		}
 	);
 	
@@ -105,7 +106,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	//pushNotification.setSoundType(1);
 	//pushNotification.setVibrateType(1);
 	
-	pushNotification.setLightScreenOnNotification(false);
+	pushNotification.setLightScreenOnNotification(true);
 	
 	//setting list tags
 	//pushNotification.setTags({"MyTag":["hello", "world"]});
